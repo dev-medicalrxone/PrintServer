@@ -1,0 +1,43 @@
+﻿# Delphi compiled / binaries
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.rsm
+*.map
+*.stat
+
+# IDE / local files
+*.dsk
+*.~dsk
+*.identcache
+*.local
+*.dproj.local
+*.groupproj.local
+
+# Delphi backups / temp
+*.~*
+*.bak
+*.tmp
+*.orig
+
+# Archives / logs
+*.zip
+*.rar
+*.log
+
+# Build / generated folders
+Source\Win32\
+Source\Win64\
+Source\DCU\
+Source\backup\
+Source\__history\
+Source\__recovery\
+# Build / generated folders
+Source/Win32/**
+Source/Win64/**
+Source/DCU/**
+Source/backup/**
+Source/__history/**
+Source/__recovery/**
