@@ -104,6 +104,13 @@ type
     function LeftJString(InStr: String; StrLen: Integer): String;
     procedure LASTW_NT37BeforePrint(Sender: TfrxReportComponent);
     procedure TL_S39_1BeforePrint(Sender: TfrxReportComponent);
+    procedure LBL_MAIN_LSERBeforePrint(Sender: TfrxReportComponent);
+    procedure SetReportMemoText(AReport: TfrxReport; const AMemoName, AText: string);
+    function FormatPhoneForLabel(const APhone: string): string;
+    procedure SetReportMemoVisible(AReport: TfrxReport; const AMemoName: string; AVisible: Boolean);
+
+
+
   private
     FPrinterOverride: string;
     procedure Configureemailserver;
@@ -1152,6 +1159,120 @@ begin
   end;
 end;
 
+{
+Created / Modified by :  Sreedhar Tamada
+Date: 07/03/2026, 07/06/2028 & 07/08/2026
+
+Fresh Desk Ticket # 122 - LABEL PRINTER SPECIFICATIONS
+Modified existing Laser Label
+Implement new Backup label -- Added onditions to show Pharmacy Name, Address and Telephone number
+
+- Enhanced LBL_MAIN_LSER laser label header formatting
+- Added dedicated LBL_MAIN_LSERBeforePrint event
+- Implemented phone number formatting as (xxx)xxx-xxxx
+- Combined address and phone into two-line header memos
+- Added PrintHeaderLaser show/hide support
+- Preserved existing LASTW_NT37 functionality
+- Improved laser label header layout
+}
+
+procedure TFrmMain.LBL_MAIN_LSERBeforePrint(Sender: TfrxReportComponent);
+var
+  PhoneText: string;
+  AddressPhoneText: string;
+  ShowHeader: Boolean;
+begin
+  // Keep existing shared logic
+  LASTW_NT37BeforePrint(Sender);
+
+  ShowHeader := PrintHeaderLaser;
+
+  PhoneText := 'Tel: ' + FormatPhoneForLabel(DM.cdsSetupSTOREPHONEHEADING.AsString);
+
+  AddressPhoneText :=
+    Trim(DM.cdsSetupSTOREADDRESSHEADING.AsString) + #13#10 +
+    PhoneText;
+
+  if ShowHeader then
+  begin
+    // Phone-only memos
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo132', True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo94',  True);
+
+    SetReportMemoText(LBL_MAIN_LSER, 'Memo132', PhoneText);
+    SetReportMemoText(LBL_MAIN_LSER, 'Memo94',  PhoneText);
+
+    // Address + phone two-line memos
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo135', True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo136', True);
+
+    SetReportMemoText(LBL_MAIN_LSER, 'Memo135', AddressPhoneText);
+    SetReportMemoText(LBL_MAIN_LSER, 'Memo136', AddressPhoneText);
+
+    // Store name / store address memos in other places
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo133', True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo137', True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo105', True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo106', True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo92',  True);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo93',  True);
+  end
+  else
+  begin
+    // Phone-only memos
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo132', False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo94',  False);
+
+    // Address + phone memos
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo135', False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo136', False);
+
+    // Store name / store address memos in other places
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo133', False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo137', False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo105', False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo106', False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo92',  False);
+    SetReportMemoVisible(LBL_MAIN_LSER, 'Memo93',  False);
+  end;
+end;
+
+
+
+procedure TFrmMain.SetReportMemoText(AReport: TfrxReport; const AMemoName, AText: string);
+var
+  Memo: TfrxMemoView;
+begin
+  Memo := AReport.FindObject(AMemoName) as TfrxMemoView;
+  if Assigned(Memo) then
+    Memo.Text := AText;
+end;
+
+procedure TFrmMain.SetReportMemoVisible(AReport: TfrxReport; const AMemoName: string; AVisible: Boolean);
+var
+  Memo: TfrxMemoView;
+begin
+  Memo := AReport.FindObject(AMemoName) as TfrxMemoView;
+  if Assigned(Memo) then
+    Memo.Visible := AVisible;
+end;
+
+function TFrmMain.FormatPhoneForLabel(const APhone: string): string;
+var
+  S: string;
+begin
+  S := StringReplace(APhone, '-', '', [rfReplaceAll]);
+  S := StringReplace(S, '(', '', [rfReplaceAll]);
+  S := StringReplace(S, ')', '', [rfReplaceAll]);
+  S := StringReplace(S, ' ', '', [rfReplaceAll]);
+
+  if Length(S) = 10 then
+    Result := '(' + Copy(S, 1, 3) + ')' + Copy(S, 4, 3) + '-' + Copy(S, 7, 4)
+  else
+    Result := APhone;
+end;
+
+
 
 procedure TFrmMain.LAS_TW_35_XPBeforePrint(Sender: TfrxReportComponent);
 Var
@@ -2098,6 +2219,16 @@ begin
                 Lines.Add('');
                 cdsSetup.Close;
                 cdsSetup.Open;
+
+
+                if not cdsSetup.IsEmpty then
+                begin
+                  cdsSetup.Edit;
+                  cdsSetupSTOREPHONEHEADING.AsString :=
+                    FormatPhoneForLabel(cdsSetupSTOREPHONEHEADING.AsString);
+                  cdsSetup.Post;
+                end;
+
                 Lines.Add(CenterString(CDSSetupRECEIPT_MESSAGE.Value,36));
               end;
               if TransType = 'DLVR' then

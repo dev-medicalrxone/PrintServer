@@ -7,10 +7,10 @@ object DM: TDM
       'Server=11.0.0.24,1433'
       'OSAuthent=No'
       'ApplicationName=Enterprise/Architect/Ultimate'
-      'Workstation=AXELOFFICE'
+      'Workstation=SERVER'
       'MARS=yes'
       'Password=agabriel'
-      'Database=esco'
+      'Database=MedicalRxOneDev'
       'DriverID=MSSQL')
     ResourceOptions.AssignedValues = [rvAutoReconnect]
     ResourceOptions.AutoReconnect = True

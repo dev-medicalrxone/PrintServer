@@ -44396,13 +44396,13 @@ object FrmMain: TFrmMain
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 42256.830405358800000000
-    ReportOptions.LastChange = 46097.388682708330000000
+    ReportOptions.LastChange = 46209.708510393520000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    OnBeforePrint = LASTW_NT37BeforePrint
+    OnBeforePrint = LBL_MAIN_LSERBeforePrint
     Left = 808
     Top = 543
     Datasets = <
@@ -44425,6 +44425,11 @@ object FrmMain: TFrmMain
       Width = 1000.000000000000000000
     end
     object Page1: TfrxReportPage
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = []
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
@@ -57578,87 +57583,6 @@ object FrmMain: TFrmMain
         DataSet = PrescriptionFull
         DataSetName = 'PrescriptionFull'
         RowCount = 0
-        object BarCode1: TfrxBarCodeView
-          AllowVectorExport = True
-          Left = 311.811023620000000000
-          Top = 7.559055120000000000
-          Width = 81.000000000000000000
-          Height = 45.354330710000000000
-          BarType = bcCode128
-          DataField = 'OTCNumber_Print'
-          DataSet = PrescriptionFull
-          DataSetName = 'PrescriptionFull'
-          Frame.Typ = []
-          Rotation = 0
-          TestLine = False
-          Text = '12345678'
-          WideBarRatio = 2.000000000000000000
-          Zoom = 1.000000000000000000
-          ColorBar = clBlack
-          BarcodeText.TextSettings.BarTextPos = btpBottom
-          BarcodeText.SupSettings.BarTextPos = btpTop
-        end
-        object Memo121: TfrxMemoView
-          AllowVectorExport = True
-          Left = 7.559055120000000000
-          Top = 7.559055120000000000
-          Width = 34.015748030000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Rx#: ')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo172: TfrxMemoView
-          AllowVectorExport = True
-          Left = 120.944881890000000000
-          Top = 7.592065490000000000
-          Width = 52.913385830000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataSet = PrescriptionFull
-          DataSetName = 'PrescriptionFull'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            
-              '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_SERVICE_DATE">' +
-              ')]')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo174: TfrxMemoView
-          AllowVectorExport = True
-          Left = 85.039370080000000000
-          Top = 7.559055120000000000
-          Width = 37.795275590000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Filled: ')
-          ParentFont = False
-          WordWrap = False
-        end
         object Memo220: TfrxMemoView
           AllowVectorExport = True
           Left = 4061.338286660000000000
@@ -57703,175 +57627,54 @@ object FrmMain: TFrmMain
           ParentFont = False
           WordWrap = False
         end
-        object Memo12: TfrxMemoView
+        object Memo133: TfrxMemoView
           AllowVectorExport = True
-          Left = 34.015748030000000000
-          Top = 7.559055120000000000
-          Width = 52.913385830000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'RX_NUMBER'
-          DataSet = PrescriptionFull
-          DataSetName = 'PrescriptionFull'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[PrescriptionFull."RX_NUMBER"]')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo147: TfrxMemoView
-          AllowVectorExport = True
-          Left = 170.078740160000000000
-          Top = 7.559055120000000000
-          Width = 56.692913390000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Rx Date: ')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo148: TfrxMemoView
-          AllowVectorExport = True
-          Left = 219.212598430000000000
-          Top = 7.559055120000000000
-          Width = 52.913385830000000000
-          Height = 13.228346460000000000
+          Left = 2.779527560000000000
+          Width = 264.566929130000000000
+          Height = 18.897637800000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataSet = PrescriptionFull
           DataSetName = 'PrescriptionFull'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
+          Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
-            '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_DATE">)]')
+            '[Setup."STORENAMEHEADING"]')
           ParentFont = False
           WordWrap = False
         end
-        object Memo67: TfrxMemoView
+        object Memo137: TfrxMemoView
           AllowVectorExport = True
           Left = 486.000000000000000000
-          Top = 8.102350000000000000
-          Width = 34.015748030000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Rx#: ')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo68: TfrxMemoView
-          AllowVectorExport = True
-          Left = 599.385826770000000000
-          Top = 8.135360370000000000
-          Width = 52.913385830000000000
-          Height = 13.228346460000000000
+          Width = 264.566929130000000000
+          Height = 18.897637800000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataSet = PrescriptionFull
           DataSetName = 'PrescriptionFull'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            
-              '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_SERVICE_DATE">' +
-              ')]')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo69: TfrxMemoView
-          AllowVectorExport = True
-          Left = 563.480314960000000000
-          Top = 8.102350000000000000
-          Width = 37.795275590000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Filled: ')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo70: TfrxMemoView
-          AllowVectorExport = True
-          Left = 512.456692910000000000
-          Top = 8.102350000000000000
-          Width = 52.913385830000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataSet = PrescriptionFull
-          DataSetName = 'PrescriptionFull'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[PrescriptionFull."RX_NUMBER"]')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo71: TfrxMemoView
-          AllowVectorExport = True
-          Left = 650.078740157480300000
-          Top = 8.102350000000000000
-          Width = 56.692913390000000000
-          Height = 13.228346460000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
+          Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
-            'Rx Date: ')
+            '[Setup."STORENAMEHEADING"]')
           ParentFont = False
           WordWrap = False
         end
-        object Memo81: TfrxMemoView
+        object Memo135: TfrxMemoView
           AllowVectorExport = True
-          Left = 697.653543310000000000
-          Top = 8.102350000000000000
-          Width = 52.913385830000000000
-          Height = 13.228346460000000000
+          Left = 3.779527560000000000
+          Top = 18.897625590000000000
+          Width = 264.566929130000000000
+          Height = 30.236220470000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataSet = PrescriptionFull
@@ -57882,80 +57685,34 @@ object FrmMain: TFrmMain
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
+          LineSpacing = 1.000000000000000000
           Memo.UTF8W = (
-            '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_DATE">)]')
+            '[Setup."STOREADDRESSHEADING"]  [Setup."STOREZIPCODE"]'
+            'Tel: [Setup."STOREPHONEHEADING"]')
           ParentFont = False
           WordWrap = False
         end
-        object Memo104: TfrxMemoView
+        object Memo136: TfrxMemoView
           AllowVectorExport = True
-          Left = 7.559055120000000000
-          Top = 20.409448818897640000
+          Left = 486.047244090000000000
+          Top = 18.897625590000000000
           Width = 264.566929130000000000
-          Height = 20.787401570000000000
+          Height = 30.236220472440940000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataSet = PrescriptionFull
           DataSetName = 'PrescriptionFull'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -12
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
-            '[Trim('
-            
-              '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
-              ',4))='#39'PAT.'#39','
-            '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
-            
-              '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
-              ',4))='#39'PAT '#39','
-            '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
-            
-              '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
-              ',3))='#39'PAT'#39','
-            '      Copy(Trim(<PrescriptionFull."NombreCompleto">),4,999),'
-            '      Trim(<PrescriptionFull."NombreCompleto">)'
-            '  )))'
-            ')]')
-          ParentFont = False
-          WordWrap = False
-        end
-        object Memo82: TfrxMemoView
-          AllowVectorExport = True
-          Left = 486.000000000000000000
-          Top = 20.409448818897640000
-          Width = 264.566929130000000000
-          Height = 20.787401570000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataSet = PrescriptionFull
-          DataSetName = 'PrescriptionFull'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[Trim('
-            
-              '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
-              ',4))='#39'PAT.'#39','
-            '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
-            
-              '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
-              ',4))='#39'PAT '#39','
-            '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
-            
-              '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
-              ',3))='#39'PAT'#39','
-            '      Copy(Trim(<PrescriptionFull."NombreCompleto">),4,999),'
-            '      Trim(<PrescriptionFull."NombreCompleto">)'
-            '  )))'
-            ')]')
+            '[Setup."STOREADDRESSHEADING"] [Setup."STOREZIPCODE"]'
+            'Tel: [Setup."STOREPHONEHEADING"]')
           ParentFont = False
           WordWrap = False
         end
@@ -57963,7 +57720,7 @@ object FrmMain: TFrmMain
       object PrescriptionFullPRESC_TEL: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 175.748031500000000000
+        Top = 215.433070870000000000
         Width = 105.826840000000000000
         Height = 15.118110240000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -57993,7 +57750,7 @@ object FrmMain: TFrmMain
         Left = 75.590551180000000000
         Top = 623.622047240000000000
         Width = 81.000000000000000000
-        Height = 45.354330708661420000
+        Height = 45.354330710000000000
         BarType = bcCode128
         DataField = 'OTCNumber_Print'
         DataSet = PrescriptionFull
@@ -58011,7 +57768,7 @@ object FrmMain: TFrmMain
       object Memo13: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 154.960629920000000000
+        Top = 196.535433070866100000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58032,10 +57789,10 @@ object FrmMain: TFrmMain
       end
       object MemoCaution3: TfrxMemoView
         AllowVectorExport = True
-        Left = 368.503937007874000000
-        Top = 63.291358110000000000
+        Left = 368.503937010000000000
+        Top = 102.047244094488200000
         Width = 41.952755910000000000
-        Height = 139.842519690000000000
+        Height = 136.062992130000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         DataField = 'Caution3'
@@ -58055,7 +57812,7 @@ object FrmMain: TFrmMain
       object Memo192: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 98.267716540000000000
+        Top = 139.842519690000000000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58065,7 +57822,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -15
+        Font.Height = -16
         Font.Name = 'Arial Narrow'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -58077,7 +57834,7 @@ object FrmMain: TFrmMain
       object PrescriptionFullAvailableDefine: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 136.062992130000000000
+        Top = 177.637795275590600000
         Width = 264.566929130000000000
         Height = 11.338590000000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58101,7 +57858,7 @@ object FrmMain: TFrmMain
       object Memo224: TfrxMemoView
         AllowVectorExport = True
         Left = 279.059055120000000000
-        Top = 249.448818900000000000
+        Top = 287.244094488189000000
         Width = 198.425196850000000000
         Height = 18.897637800000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58129,7 +57886,7 @@ object FrmMain: TFrmMain
       object Memo47: TfrxMemoView
         AllowVectorExport = True
         Left = 279.442590110000000000
-        Top = 222.524934390000000000
+        Top = 246.803149610000000000
         Width = 198.425196850000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58138,7 +57895,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -11
+        Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = []
         Frame.Typ = []
@@ -58164,8 +57921,8 @@ object FrmMain: TFrmMain
       end
       object Memo122: TfrxMemoView
         AllowVectorExport = True
-        Left = 158.740157480315000000
-        Top = 285.354330710000000000
+        Left = 158.740157480000000000
+        Top = 309.921259842519700000
         Width = 26.022835350000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58188,7 +57945,7 @@ object FrmMain: TFrmMain
       object Memo173: TfrxMemoView
         AllowVectorExport = True
         Left = 192.755905510000000000
-        Top = 285.354330710000000000
+        Top = 309.921259842519700000
         Width = 79.370078740000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58209,7 +57966,7 @@ object FrmMain: TFrmMain
       object Memo185: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 119.055118110000000000
+        Top = 160.629921259842500000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58240,8 +57997,8 @@ object FrmMain: TFrmMain
       end
       object Memo191: TfrxMemoView
         AllowVectorExport = True
-        Left = 7.559055120000000000
-        Top = 51.023622050000000000
+        Left = 4.535433070000000000
+        Top = 97.511811020000000000
         Width = 264.566929130000000000
         Height = 37.795275590000000000
         StretchMode = smActualHeight
@@ -58252,7 +58009,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -15
+        Font.Height = -16
         Font.Name = 'Arial Narrow'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -58263,9 +58020,9 @@ object FrmMain: TFrmMain
       object MemoCaution1: TfrxMemoView
         AllowVectorExport = True
         Left = 278.733766660000000000
-        Top = 63.291358110000000000
+        Top = 102.047244090000000000
         Width = 42.000000000000000000
-        Height = 139.842519690000000000
+        Height = 136.062992130000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         DataField = 'Caution1'
@@ -58284,10 +58041,10 @@ object FrmMain: TFrmMain
       end
       object MemoCaution2: TfrxMemoView
         AllowVectorExport = True
-        Left = 324.661417322834600000
-        Top = 63.291358110000000000
+        Left = 324.661417320000000000
+        Top = 102.047244094488200000
         Width = 41.952755910000000000
-        Height = 139.842519690000000000
+        Height = 136.062992130000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         DataField = 'Caution2'
@@ -58306,10 +58063,10 @@ object FrmMain: TFrmMain
       end
       object MemoCaution4: TfrxMemoView
         AllowVectorExport = True
-        Left = 411.968503937007900000
-        Top = 63.291358110000000000
+        Left = 411.968503940000000000
+        Top = 102.047244094488200000
         Width = 41.952755910000000000
-        Height = 139.842519690000000000
+        Height = 136.062992130000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         DataField = 'Caution4'
@@ -58329,7 +58086,7 @@ object FrmMain: TFrmMain
       object MemoPatEdu: TfrxMemoView
         AllowVectorExport = True
         Left = 278.929133860000000000
-        Top = 377.952755910000000000
+        Top = 419.527559060000000000
         Width = 453.543307090000000000
         Height = 37.795275590000000000
         StretchMode = smMaxHeight
@@ -58349,9 +58106,9 @@ object FrmMain: TFrmMain
       object Memo139: TfrxMemoView
         AllowVectorExport = True
         Left = 7.737532800000000000
-        Top = 222.406836360000000000
+        Top = 246.803149610000000000
         Width = 30.236220470000000000
-        Height = 17.007874015748030000
+        Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         Font.Charset = DEFAULT_CHARSET
@@ -58368,7 +58125,7 @@ object FrmMain: TFrmMain
       object Memo143: TfrxMemoView
         AllowVectorExport = True
         Left = 222.992125980000000000
-        Top = 221.772978090000000000
+        Top = 247.672440944881900000
         Width = 45.354330710000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58392,9 +58149,9 @@ object FrmMain: TFrmMain
       object Memo123: TfrxMemoView
         AllowVectorExport = True
         Left = 35.905511810000000000
-        Top = 222.406836360000000000
-        Width = 56.692913385826770000
-        Height = 17.007874015748030000
+        Top = 246.803149606299200000
+        Width = 56.692913390000000000
+        Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         DataField = 'RX_NUMBER'
@@ -58413,8 +58170,8 @@ object FrmMain: TFrmMain
       end
       object Memo226: TfrxMemoView
         AllowVectorExport = True
-        Left = 139.842519685039400000
-        Top = 222.200439570000000000
+        Left = 139.842519690000000000
+        Top = 246.803149606299200000
         Width = 47.244094490000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58435,8 +58192,8 @@ object FrmMain: TFrmMain
       object Memo84: TfrxMemoView
         AllowVectorExport = True
         Left = 83.149606300000000000
-        Top = 222.301484550000000000
-        Width = 60.472440944881890000
+        Top = 246.803149606299200000
+        Width = 60.472440940000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -58454,7 +58211,7 @@ object FrmMain: TFrmMain
       object Memo80: TfrxMemoView
         AllowVectorExport = True
         Left = 7.737532800000000000
-        Top = 247.559055120000000000
+        Top = 272.125984251968500000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58482,9 +58239,9 @@ object FrmMain: TFrmMain
       end
       object Memo144: TfrxMemoView
         AllowVectorExport = True
-        Left = 192.755905511811000000
-        Top = 221.772978090000000000
-        Width = 37.795275590551180000
+        Left = 192.755905510000000000
+        Top = 246.803149610000000000
+        Width = 37.795275590000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -58502,7 +58259,7 @@ object FrmMain: TFrmMain
       object PrescriptionFullAvailableDefine1: TfrxMemoView
         AllowVectorExport = True
         Left = 7.737532800000000000
-        Top = 260.787401570000000000
+        Top = 285.354330708661400000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58517,8 +58274,8 @@ object FrmMain: TFrmMain
         Frame.Typ = []
         Memo.UTF8W = (
           
-            '[PrescriptionFull."AvailableDefine"]               Pat. Pay : $ ' +
-            '[PrescriptionFull."PAT_PAY_AMOUNT"]')
+            '[PrescriptionFull."AvailableDefine"]                Pat. Pay : $' +
+            ' [PrescriptionFull."PAT_PAY_AMOUNT"]')
         ParentFont = False
         WordWrap = False
         VAlign = vaCenter
@@ -58531,7 +58288,7 @@ object FrmMain: TFrmMain
       object Memo37: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 234.330708660000000000
+        Top = 258.897637795275600000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58547,8 +58304,8 @@ object FrmMain: TFrmMain
         Memo.UTF8W = (
           
             'NDC : [PrescriptionFull."NDC"]  Batch : [PrescriptionFull."BATCH' +
-            '_NUMBER"]   Exp : [FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull.' +
-            '"DRUG_EXPIRATION">)]')
+            '_NUMBER"]      Exp : [FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFu' +
+            'll."DRUG_EXPIRATION">)]')
         ParentFont = False
         WordBreak = True
         WordWrap = False
@@ -58564,7 +58321,7 @@ object FrmMain: TFrmMain
       object Memo141: TfrxMemoView
         AllowVectorExport = True
         Left = 7.737532800000000000
-        Top = 274.015748030000000000
+        Top = 297.448818897637800000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58587,7 +58344,7 @@ object FrmMain: TFrmMain
       object Memo142: TfrxMemoView
         AllowVectorExport = True
         Left = 7.737532800000000000
-        Top = 302.362204720000000000
+        Top = 325.039370080000000000
         Width = 132.283464570000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58610,7 +58367,7 @@ object FrmMain: TFrmMain
       object Memo140: TfrxMemoView
         AllowVectorExport = True
         Left = 143.622047240000000000
-        Top = 302.362204720000000000
+        Top = 325.039370080000000000
         Width = 128.503937010000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58649,7 +58406,7 @@ object FrmMain: TFrmMain
       object Memo114: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 285.354330710000000000
+        Top = 309.921259842519700000
         Width = 75.590551180000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58669,7 +58426,7 @@ object FrmMain: TFrmMain
       object Memo113: TfrxMemoView
         AllowVectorExport = True
         Left = 85.039370080000000000
-        Top = 285.354330710000000000
+        Top = 309.921259842519700000
         Width = 71.811023620000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58691,8 +58448,8 @@ object FrmMain: TFrmMain
       end
       object Memo101: TfrxMemoView
         AllowVectorExport = True
-        Left = 173.858267716535400000
-        Top = 285.354330710000000000
+        Left = 173.858267720000000000
+        Top = 309.921259842519700000
         Width = 18.897637800000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58713,7 +58470,7 @@ object FrmMain: TFrmMain
       object Memo61: TfrxMemoView
         AllowVectorExport = True
         Left = 491.160104980000000000
-        Top = 290.417440000000000000
+        Top = 325.039370078740200000
         Width = 85.039370080000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58732,7 +58489,7 @@ object FrmMain: TFrmMain
       object Line2: TfrxLineView
         AllowVectorExport = True
         Left = 582.047244090000000000
-        Top = 302.756030000000000000
+        Top = 340.157480314960600000
         Width = 151.181102360000000000
         Color = clBlack
         Frame.Typ = [ftTop]
@@ -58740,7 +58497,7 @@ object FrmMain: TFrmMain
       object Memo63: TfrxMemoView
         AllowVectorExport = True
         Left = 488.666666670000000000
-        Top = 222.666666670000000000
+        Top = 246.803149606299200000
         Width = 30.236220470000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58758,8 +58515,8 @@ object FrmMain: TFrmMain
       end
       object Memo64: TfrxMemoView
         AllowVectorExport = True
-        Left = 521.574803149606300000
-        Top = 222.666666670000000000
+        Left = 521.574803150000000000
+        Top = 246.803149606299200000
         Width = 52.913385830000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58781,7 +58538,7 @@ object FrmMain: TFrmMain
       object Memo65: TfrxMemoView
         AllowVectorExport = True
         Left = 488.666666660000000000
-        Top = 240.000000000000000000
+        Top = 275.905511811023600000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -58791,7 +58548,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -58818,7 +58575,7 @@ object FrmMain: TFrmMain
       object Memo66: TfrxMemoView
         AllowVectorExport = True
         Left = 582.047244090000000000
-        Top = 222.614173230000000000
+        Top = 246.803149606299200000
         Width = 60.472440940000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58840,9 +58597,9 @@ object FrmMain: TFrmMain
       end
       object Memo90: TfrxMemoView
         AllowVectorExport = True
-        Left = 642.519685039370100000
-        Top = 222.614173230000000000
-        Width = 69.921259842519690000
+        Left = 642.519685040000000000
+        Top = 246.803149606299200000
+        Width = 69.921259840000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -58860,7 +58617,7 @@ object FrmMain: TFrmMain
       object Memo95: TfrxMemoView
         AllowVectorExport = True
         Left = 702.992125980000000000
-        Top = 222.614173230000000000
+        Top = 246.803149606299200000
         Width = 40.413420000000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58881,7 +58638,7 @@ object FrmMain: TFrmMain
       object Memo96: TfrxMemoView
         AllowVectorExport = True
         Left = 488.692913390000000000
-        Top = 257.007874020000000000
+        Top = 294.803149610000000000
         Width = 139.842519690000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -58891,7 +58648,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -12
+        Font.Height = -13
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -58902,8 +58659,8 @@ object FrmMain: TFrmMain
       end
       object Memo97: TfrxMemoView
         AllowVectorExport = True
-        Left = 627.401574800000000000
-        Top = 257.007874020000000000
+        Left = 634.960629920000000000
+        Top = 294.803149610000000000
         Width = 132.283464570000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -58913,7 +58670,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -12
+        Font.Height = -13
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -58925,7 +58682,7 @@ object FrmMain: TFrmMain
       object Memo98: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 377.952755910000000000
+        Top = 419.527559060000000000
         Width = 30.236220470000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58943,8 +58700,8 @@ object FrmMain: TFrmMain
       end
       object Memo99: TfrxMemoView
         AllowVectorExport = True
-        Left = 37.417322834645670000
-        Top = 377.952755910000000000
+        Left = 37.417322830000000000
+        Top = 419.527559055118100000
         Width = 52.913385830000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58966,7 +58723,7 @@ object FrmMain: TFrmMain
       object Memo100: TfrxMemoView
         AllowVectorExport = True
         Left = 94.488188980000000000
-        Top = 377.952755910000000000
+        Top = 419.527559055118100000
         Width = 68.031496060000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -58989,7 +58746,7 @@ object FrmMain: TFrmMain
       object Memo102: TfrxMemoView
         AllowVectorExport = True
         Left = 156.850393700000000000
-        Top = 377.952755910000000000
+        Top = 419.527559055118100000
         Width = 62.362204720000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59008,8 +58765,8 @@ object FrmMain: TFrmMain
       object Memo103: TfrxMemoView
         AllowVectorExport = True
         Left = 222.992125980000000000
-        Top = 377.952755910000000000
-        Width = 47.244094488188980000
+        Top = 419.527559055118100000
+        Width = 47.244094490000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -59029,7 +58786,7 @@ object FrmMain: TFrmMain
       object Memo107: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 398.740157480000000000
+        Top = 439.181102360000000000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -59039,7 +58796,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -59067,7 +58824,7 @@ object FrmMain: TFrmMain
       object Memo108: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 420.666666670000000000
+        Top = 459.212598425196900000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         StretchMode = smActualHeight
@@ -59095,7 +58852,7 @@ object FrmMain: TFrmMain
       object Memo110: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 444.094488190000000000
+        Top = 483.779527560000000000
         Width = 75.590551180000000000
         Height = 11.338582680000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59115,7 +58872,7 @@ object FrmMain: TFrmMain
       object Memo111: TfrxMemoView
         AllowVectorExport = True
         Left = 79.370078740000000000
-        Top = 444.094488190000000000
+        Top = 483.779527560000000000
         Width = 71.811023620000000000
         Height = 11.338582680000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59138,7 +58895,7 @@ object FrmMain: TFrmMain
       object Memo112: TfrxMemoView
         AllowVectorExport = True
         Left = 213.543307090000000000
-        Top = 444.094488190000000000
+        Top = 483.779527559055100000
         Width = 56.692913390000000000
         Height = 11.338582680000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59161,9 +58918,9 @@ object FrmMain: TFrmMain
       end
       object Memo115: TfrxMemoView
         AllowVectorExport = True
-        Left = 160.629921259842500000
-        Top = 444.000000000000000000
-        Width = 64.251968503937010000
+        Left = 160.629921260000000000
+        Top = 483.779527559055100000
+        Width = 64.251968500000000000
         Height = 11.338582680000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -59184,7 +58941,7 @@ object FrmMain: TFrmMain
       object Memo116: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 461.333333330000000000
+        Top = 498.897637795275600000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59194,7 +58951,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -11
+        Font.Height = -12
         Font.Name = 'Arial'
         Font.Style = []
         Frame.Typ = []
@@ -59206,7 +58963,7 @@ object FrmMain: TFrmMain
       object Memo117: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 480.000000000000000000
+        Top = 517.795275590551200000
         Width = 132.283464570000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -59228,7 +58985,7 @@ object FrmMain: TFrmMain
       object Memo120: TfrxMemoView
         AllowVectorExport = True
         Left = 145.511811020000000000
-        Top = 480.000000000000000000
+        Top = 517.795275590551200000
         Width = 126.614173230000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -59251,7 +59008,7 @@ object FrmMain: TFrmMain
       object Memo149: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 540.472440940000000000
+        Top = 566.929133860000000000
         Width = 105.826840000000000000
         Height = 15.118110240000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59279,7 +59036,7 @@ object FrmMain: TFrmMain
       object Memo150: TfrxMemoView
         AllowVectorExport = True
         Left = 6.559055120000000000
-        Top = 521.574803150000000000
+        Top = 551.811023622047200000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59301,7 +59058,7 @@ object FrmMain: TFrmMain
       object Memo151: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 502.677165350000000000
+        Top = 536.692913385826800000
         Width = 264.566929130000000000
         Height = 11.338590000000000000
         StretchMode = smActualHeight
@@ -59324,8 +59081,8 @@ object FrmMain: TFrmMain
       end
       object Memo152: TfrxMemoView
         AllowVectorExport = True
-        Left = 143.622047240000000000
-        Top = 566.929133860000000000
+        Left = 134.173228346456700000
+        Top = 585.826771650000000000
         Width = 132.283464570000000000
         Height = 37.795275590000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59345,8 +59102,8 @@ object FrmMain: TFrmMain
       end
       object Memo153: TfrxMemoView
         AllowVectorExport = True
-        Left = 18.897637800000000000
-        Top = 566.929133860000000000
+        Left = 9.448818897637795000
+        Top = 585.826771650000000000
         Width = 151.181102360000000000
         Height = 37.795275590000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59365,7 +59122,7 @@ object FrmMain: TFrmMain
       object Memo154: TfrxMemoView
         AllowVectorExport = True
         Left = 487.181102360000000000
-        Top = 340.000000000000000000
+        Top = 377.952755905511800000
         Width = 30.236220470000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59383,8 +59140,8 @@ object FrmMain: TFrmMain
       end
       object Memo155: TfrxMemoView
         AllowVectorExport = True
-        Left = 521.574803150000000000
-        Top = 340.000000000000000000
+        Left = 529.133858270000000000
+        Top = 377.952755905511800000
         Width = 52.913385830000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59406,7 +59163,7 @@ object FrmMain: TFrmMain
       object Memo156: TfrxMemoView
         AllowVectorExport = True
         Left = 487.333333330000000000
-        Top = 357.165354330000000000
+        Top = 395.850393700000000000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59416,7 +59173,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -59428,7 +59185,7 @@ object FrmMain: TFrmMain
       object Memo109: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 696.000000000000000000
+        Top = 755.905511810000000000
         Width = 30.236220470000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59447,7 +59204,7 @@ object FrmMain: TFrmMain
       object Memo119: TfrxMemoView
         AllowVectorExport = True
         Left = 37.417322830000000000
-        Top = 696.000000000000000000
+        Top = 755.905511811023600000
         Width = 52.913385830000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59468,8 +59225,8 @@ object FrmMain: TFrmMain
       end
       object Memo124: TfrxMemoView
         AllowVectorExport = True
-        Left = 94.488188976377950000
-        Top = 696.000000000000000000
+        Left = 94.488188980000000000
+        Top = 755.905511811023600000
         Width = 64.251968500000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59492,8 +59249,8 @@ object FrmMain: TFrmMain
       object Memo125: TfrxMemoView
         AllowVectorExport = True
         Left = 156.850393700000000000
-        Top = 696.000000000000000000
-        Width = 62.362204724409450000
+        Top = 755.905511811023600000
+        Width = 62.362204720000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -59511,8 +59268,8 @@ object FrmMain: TFrmMain
       object Memo126: TfrxMemoView
         AllowVectorExport = True
         Left = 222.992125980000000000
-        Top = 696.000000000000000000
-        Width = 47.244094488188980000
+        Top = 755.905511811023600000
+        Width = 47.244094490000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -59532,7 +59289,7 @@ object FrmMain: TFrmMain
       object Memo127: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 716.787401570000000000
+        Top = 774.803149610000000000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         StretchMode = smActualHeight
@@ -59542,7 +59299,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -59570,7 +59327,7 @@ object FrmMain: TFrmMain
       object Memo128: TfrxMemoView
         AllowVectorExport = True
         Left = 7.559055120000000000
-        Top = 738.713910760000000000
+        Top = 797.480314960000000000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         StretchMode = smActualHeight
@@ -59599,7 +59356,7 @@ object FrmMain: TFrmMain
       object Memo129: TfrxMemoView
         AllowVectorExport = True
         Left = 143.622047240000000000
-        Top = 905.000000000000000000
+        Top = 955.464566930000000000
         Width = 132.283464570000000000
         Height = 37.795275590000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59620,7 +59377,7 @@ object FrmMain: TFrmMain
       object Memo130: TfrxMemoView
         AllowVectorExport = True
         Left = 18.897637800000000000
-        Top = 907.086614170000000000
+        Top = 957.732283460000000000
         Width = 151.181102360000000000
         Height = 37.795275590000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59639,14 +59396,14 @@ object FrmMain: TFrmMain
       object Memo131: TfrxMemoView
         AllowVectorExport = True
         Left = 32.000000000000000000
-        Top = 812.000000000000000000
+        Top = 873.826771650000000000
         Width = 226.771653540000000000
         Height = 66.141732280000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
         ContentScaleOptions.Constraints.MinIterationValue = 0
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -40
+        Font.Height = -35
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -59660,7 +59417,7 @@ object FrmMain: TFrmMain
       object BarCode4: TfrxBarCodeView
         AllowVectorExport = True
         Left = 75.590551180000000000
-        Top = 963.779527560000000000
+        Top = 1014.425196850394000000
         Width = 81.000000000000000000
         Height = 45.354330710000000000
         BarType = bcCode128
@@ -59679,8 +59436,8 @@ object FrmMain: TFrmMain
       end
       object PrescriptionFullPAT_FULL_ADDRESS: TfrxMemoView
         AllowVectorExport = True
-        Left = 7.559055120000000000
-        Top = 41.952755910000000000
+        Left = 3.779527560000000000
+        Top = 85.039370080000000000
         Width = 264.566929130000000000
         Height = 18.897637800000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59708,7 +59465,7 @@ object FrmMain: TFrmMain
       object Memo83: TfrxMemoView
         AllowVectorExport = True
         Left = 486.000000000000000000
-        Top = 176.291326380000000000
+        Top = 215.433070870000000000
         Width = 105.826840000000000000
         Height = 15.118110240000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59736,7 +59493,7 @@ object FrmMain: TFrmMain
       object Memo85: TfrxMemoView
         AllowVectorExport = True
         Left = 486.000000000000000000
-        Top = 155.503924800000000000
+        Top = 196.535433070866100000
         Width = 264.566929130000000000
         Height = 17.007874020000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59758,7 +59515,7 @@ object FrmMain: TFrmMain
       object Memo86: TfrxMemoView
         AllowVectorExport = True
         Left = 486.000000000000000000
-        Top = 98.811011420000000000
+        Top = 140.598425196850400000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59768,7 +59525,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -15
+        Font.Height = -16
         Font.Name = 'Arial Narrow'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -59780,7 +59537,7 @@ object FrmMain: TFrmMain
       object Memo87: TfrxMemoView
         AllowVectorExport = True
         Left = 486.000000000000000000
-        Top = 136.606287010000000000
+        Top = 177.637795275590600000
         Width = 264.566929130000000000
         Height = 11.338590000000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59803,7 +59560,7 @@ object FrmMain: TFrmMain
       object Memo88: TfrxMemoView
         AllowVectorExport = True
         Left = 486.000000000000000000
-        Top = 119.598412990000000000
+        Top = 160.629921260000000000
         Width = 264.566929130000000000
         Height = 20.787401570000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59835,7 +59592,7 @@ object FrmMain: TFrmMain
       object Memo89: TfrxMemoView
         AllowVectorExport = True
         Left = 486.000000000000000000
-        Top = 51.566916930000000000
+        Top = 97.511811020000000000
         Width = 264.566929130000000000
         Height = 37.795275590000000000
         StretchMode = smActualHeight
@@ -59846,7 +59603,7 @@ object FrmMain: TFrmMain
         DataSetName = 'PrescriptionFull'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -15
+        Font.Height = -16
         Font.Name = 'Arial Narrow'
         Font.Style = [fsBold]
         Frame.Typ = []
@@ -59857,8 +59614,8 @@ object FrmMain: TFrmMain
       end
       object Memo91: TfrxMemoView
         AllowVectorExport = True
-        Left = 486.047244094488200000
-        Top = 42.496050790000000000
+        Left = 486.047244090000000000
+        Top = 85.039370080000000000
         Width = 264.566929130000000000
         Height = 18.897637800000000000
         ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -59880,6 +59637,567 @@ object FrmMain: TFrmMain
           '    Trim(<PrescriptionFull."PAT_FULL_ADDRESS">)'
           '  )'
           ')]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object BarCode1: TfrxBarCodeView
+        AllowVectorExport = True
+        Left = 311.811023620000000000
+        Top = 61.984251968503940000
+        Width = 81.000000000000000000
+        Height = 45.354330710000000000
+        BarType = bcCode128
+        DataField = 'OTCNumber_Print'
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Frame.Typ = []
+        Rotation = 0
+        TestLine = False
+        Text = '12345678'
+        WideBarRatio = 2.000000000000000000
+        Zoom = 1.000000000000000000
+        ColorBar = clBlack
+        BarcodeText.TextSettings.BarTextPos = btpBottom
+        BarcodeText.SupSettings.BarTextPos = btpTop
+      end
+      object Memo92: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 684.094488190000000000
+        Width = 264.566929130000000000
+        Height = 22.677165350000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[Setup."STORENAMEHEADING"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo93: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 706.771653540000000000
+        Width = 264.566929130000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[Setup."STOREADDRESSHEADING"] [Setup."STOREZIPCODE"]')
+        ParentFont = False
+        WordWrap = False
+        Formats = <
+          item
+          end
+          item
+          end>
+      end
+      object Memo94: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 727.559055120000000000
+        Width = 264.566929130000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          'Tel: [Setup."STOREPHONEHEADING"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo105: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 351.496062990000000000
+        Width = 264.566929130000000000
+        Height = 22.677165350000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[Setup."STORENAMEHEADING"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo106: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 372.283464570000000000
+        Width = 264.566929130000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[Setup."STOREADDRESSHEADING"] [Setup."STOREZIPCODE"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo132: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 393.070866140000000000
+        Width = 264.566929130000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          'Tel: [Setup."STOREPHONEHEADING"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo104: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 69.921259840000000000
+        Width = 264.566929130000000000
+        Height = 20.787401570000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[Trim('
+          
+            '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
+            ',4))='#39'PAT.'#39','
+          '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
+          
+            '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
+            ',4))='#39'PAT '#39','
+          '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
+          
+            '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
+            ',3))='#39'PAT'#39','
+          '      Copy(Trim(<PrescriptionFull."NombreCompleto">),4,999),'
+          '      Trim(<PrescriptionFull."NombreCompleto">)'
+          '  )))'
+          ')]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo82: TfrxMemoView
+        AllowVectorExport = True
+        Left = 486.000000000000000000
+        Top = 69.921259840000000000
+        Width = 264.566929130000000000
+        Height = 20.787401570000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[Trim('
+          
+            '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
+            ',4))='#39'PAT.'#39','
+          '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
+          
+            '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
+            ',4))='#39'PAT '#39','
+          '      Copy(Trim(<PrescriptionFull."NombreCompleto">),5,999),'
+          
+            '  IIF(UpperCase(Copy(Trim(<PrescriptionFull."NombreCompleto">),1' +
+            ',3))='#39'PAT'#39','
+          '      Copy(Trim(<PrescriptionFull."NombreCompleto">),4,999),'
+          '      Trim(<PrescriptionFull."NombreCompleto">)'
+          '  )))'
+          ')]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo121: TfrxMemoView
+        AllowVectorExport = True
+        Left = 3.779527560000000000
+        Top = 56.692913390000000000
+        Width = 34.015748030000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'Rx#: ')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo12: TfrxMemoView
+        AllowVectorExport = True
+        Left = 34.015748030000000000
+        Top = 56.692913390000000000
+        Width = 52.913385830000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataField = 'RX_NUMBER'
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[PrescriptionFull."RX_NUMBER"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo174: TfrxMemoView
+        AllowVectorExport = True
+        Left = 85.039370080000000000
+        Top = 56.692913385826770000
+        Width = 37.795275590000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'Filled: ')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo172: TfrxMemoView
+        AllowVectorExport = True
+        Left = 120.944881890000000000
+        Top = 56.692913390000000000
+        Width = 52.913385830000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          
+            '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_SERVICE_DATE">' +
+            ')]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo147: TfrxMemoView
+        AllowVectorExport = True
+        Left = 170.078740160000000000
+        Top = 56.692913390000000000
+        Width = 56.692913390000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'Rx Date: ')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo148: TfrxMemoView
+        AllowVectorExport = True
+        Left = 219.212598430000000000
+        Top = 56.692913385826770000
+        Width = 52.913385830000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_DATE">)]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo68: TfrxMemoView
+        AllowVectorExport = True
+        Left = 599.385826770000000000
+        Top = 56.692925590000000000
+        Width = 52.913385830000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          
+            '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_SERVICE_DATE">' +
+            ')]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo71: TfrxMemoView
+        AllowVectorExport = True
+        Left = 650.078740160000000000
+        Top = 56.692925590551180000
+        Width = 56.692913390000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'Rx Date: ')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo81: TfrxMemoView
+        AllowVectorExport = True
+        Left = 697.653543310000000000
+        Top = 56.692925590551180000
+        Width = 52.913385830000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[FormatDateTime('#39'mm/dd/yy'#39', <PrescriptionFull."RX_DATE">)]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo67: TfrxMemoView
+        AllowVectorExport = True
+        Left = 486.000000000000000000
+        Top = 56.692925590000000000
+        Width = 34.015748030000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'Rx#: ')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo70: TfrxMemoView
+        AllowVectorExport = True
+        Left = 512.456692910000000000
+        Top = 56.692925590551180000
+        Width = 52.913385830000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[PrescriptionFull."RX_NUMBER"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo69: TfrxMemoView
+        AllowVectorExport = True
+        Left = 563.480314960000000000
+        Top = 56.692925590000000000
+        Width = 37.795275590000000000
+        Height = 13.228346460000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'Filled: ')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo134: TfrxMemoView
+        AllowVectorExport = True
+        Left = 165.000000000000000000
+        Top = 566.929133860000000000
+        Width = 105.826840000000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          'RPH: [PrescriptionFull."PHARMACIST"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo138: TfrxMemoView
+        AllowVectorExport = True
+        Left = 164.000000000000000000
+        Top = 215.433070870000000000
+        Width = 105.826840000000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          'RPH: [PrescriptionFull."PHARMACIST"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo145: TfrxMemoView
+        AllowVectorExport = True
+        Left = 646.000000000000000000
+        Top = 215.433070870000000000
+        Width = 105.826840000000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        Frame.Typ = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          'RPH: [PrescriptionFull."PHARMACIST"]')
+        ParentFont = False
+        WordWrap = False
+      end
+      object Memo146: TfrxMemoView
+        AllowVectorExport = True
+        Left = 7.559055120000000000
+        Top = 818.267716535433100000
+        Width = 105.826840000000000000
+        Height = 15.118110240000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataSet = PrescriptionFull
+        DataSetName = 'PrescriptionFull'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+        Memo.UTF8W = (
+          'RPH: [PrescriptionFull."PHARMACIST"]')
         ParentFont = False
         WordWrap = False
       end
